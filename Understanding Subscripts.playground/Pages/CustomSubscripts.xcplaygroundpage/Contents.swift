@@ -141,22 +141,19 @@ code(for: "Additional Subscrips") {
                 grid[row][col] = newValue!
             }
         }
-        
-        subscript(row row: Int) -> [T?] {
+        subscript(row row: Int) -> [T] {
             grid[row]
         }
-        
         subscript(col col: Int) -> [T] {
-            grid.map { $0[col]}
+            grid.map {$0[col]}
         }
     }
     var matrix = Matrix(rows: 3, cols: 3, defaultValue: "-")
     print(matrix.grid)
     matrix[row: 1, col: 1] = "X"
     print(matrix.grid)
-    print(matrix[row: 0])
+    print(matrix[row: 1])
     print(matrix[col: 1])
-    
 }
 /*:
 [< Previous](@previous)                    [Home](Introduction)                    [Next >](@next)

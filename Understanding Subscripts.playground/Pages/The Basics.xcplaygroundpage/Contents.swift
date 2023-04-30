@@ -14,6 +14,7 @@ code(for: "Arrays - [Int]") {
     // Change the 5th element of the array to 6
     numbers[4] = 6
     print(numbers)
+//    print(numbers[6])
 }
 code(for: "Arrays - [Object]") {
     struct Person {
@@ -26,13 +27,12 @@ code(for: "Arrays - [Object]") {
         Person(name: "Julie", age: 21)
     ]
     
-    // print the age of the second person
-   let secondPerson = people[1]
-    print(secondPerson.name)
+    // print the name of the second person
+    print(people[1].name)
    
     // Change the name of the first person to Jennifer
     people[0].name = "Jennifer"
-    print(people[0].name)
+    print(people[0])
     
     // Loop through using an index to print out all first names
     for index in 0..<people.count {
@@ -55,26 +55,10 @@ code(for: "Dictionaries") {
 
     // Loop through and print all ages
     for (key, _) in ages {
-//        print(ages[key] ?? -1)
         print(ages[key]!)
     }
+    
 }
-
-code(for: "KeyPaths") {
-    // See https://youtu.be/2-fzccDtc7o
-    // consider this struct and instance
-    struct Game {
-        var name: String
-        var numPlayers: Int
-    }
-    var game = Game(name: "Football", numPlayers: 11)
-    // Use the keyPath index for game to print the number of players
-    print(game[keyPath: \.numPlayers])
-    // Change the game to Canadian football
-    game[keyPath: \.numPlayers] = 12
-    print(game[keyPath: \.numPlayers])
-}
-
 /*:
 [< Previous](@previous)                    [Home](Introduction)                    [Next >](@next)
 */
